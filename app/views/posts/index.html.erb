@@ -1,0 +1,27 @@
+
+       <%= form_for(@new_posts) do |f| %>
+    <ul class="social">
+        <%= f.text_field :comment, :class => "form-row text-input-row" %>
+        <%= f.submit "Create", :class => "a.button" %>
+      </ul>
+    <% end %>
+
+<div class="blog-wrap">
+	<!-- Begin Blog -->
+	<div class="blog-grid">
+
+<!-- Begin Quote Format -->
+<% @all_posts.each do |p| %>
+
+
+<div class="post format-quote box">
+  <blockquote><%= p.comment %></blockquote>
+  <div class="details">
+
+  </div>
+
+</div>
+<%end%>
+<!-- End Quote Format -->
+</div>
+</div>
