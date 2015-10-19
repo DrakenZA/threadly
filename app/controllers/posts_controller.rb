@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-
+before_action :require_user, only: [:index, :show]
 
   def destroy
     @dpost = Post.find_by id: params[:id]
@@ -15,6 +15,7 @@ class PostsController < ApplicationController
 
     def create
       @post = Post.new(params.require(:post).permit(:comment))
+      @post.owner = current_user.username
     if @post.save
       redirect_to '/posts'
     else

@@ -1,0 +1,22 @@
+
+<div class ="signupbox">
+
+<%= form_for(:session, url: login_path, html: { class: "pure-form pure-form-aligned"} ) do |u| %>
+
+  <fieldset>
+    <div class="forms">
+    <div class="intro" style="font-size :50px">
+      Login
+    </div>
+    <div class="intro">
+       <label for="user_username">Username</lobel>
+      <%=  u.text_field :username, :placeholder => "Username", :style => "width:30%;display: block;margin: auto;" %>
+      <label for="user_password">Password</lobel>
+
+      <%=  u.password_field :password, :placeholder => "Password", :style => "width:30%;display: block;margin: auto;" %>
+    </div>
+      <%= u.submit "Login", :style => "width:30%;display: block;margin: auto;"%>
+
+      <%end%>
+    </div>
+  </div>

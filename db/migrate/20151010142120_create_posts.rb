@@ -4,6 +4,7 @@ class CreatePosts < ActiveRecord::Migration
 
       t.timestamps
       t.text :comment
+      t.string :owner
     end
   end
 end
