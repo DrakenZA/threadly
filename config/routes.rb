@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'posts/destroy'
+
   get 'sigh/index'
 
   resources :posts

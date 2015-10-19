@@ -17,6 +17,8 @@
 <div class="post format-quote box">
   <blockquote><%= p.comment %></blockquote>
   <div class="details">
+    <span class="icon-image"><a href="#">  <%=p.created_at%></a></span>
+    <%= button_to "delete" , post_path(:id => p.id), :method => :delete %>
 
   </div>
 

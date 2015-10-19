@@ -1,6 +1,12 @@
 class PostsController < ApplicationController
 
 
+  def destroy
+    @dpost = Post.find_by id: params[:id]
+    @dpost.destroy
+    redirect_to :action => 'index'
+  end
+
   def index
     @new_posts = Post.new
     @all_posts = Post.order(created_at: :desc).all
@@ -14,6 +20,8 @@ class PostsController < ApplicationController
     else
       render 'new'
     end
+
+
   end
 
 
