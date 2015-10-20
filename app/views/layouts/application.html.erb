@@ -5,12 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <title>threadly</title>
 <link rel="stylesheet" type="text/css" media="all" href="/assets/style.css" />
-<!---<script type="text/javascript" src="/assets/ddsmoothmenu.js"></script>--->
-
-
-
 <link rel="stylesheet" type="text/css" href="assets/media-queries.css" />
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,700,700italic|Open+Sans+Condensed:300,700' rel="stylesheet" type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,700,700italic|Open+Sans+Condensed:300,700' rel="stylesheet" type='text/css'>
 
 <script type="text/javascript" src="/assets/jquery-1.7.2.min.js"></script>
 
@@ -34,7 +30,7 @@
 					<% if current_user %>
 
 
-										<a href="#"><%=link_to current_user.username %></a>
+										<%=link_to current_user.username %>
 										<%= button_to "Log Out", logout_path, :method => :delete, :style => "width:100px;display: block;margin: auto;" %>
 										<%else%>
 										<%=link_to "Login", 'login' %>
