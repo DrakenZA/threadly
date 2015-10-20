@@ -1,9 +1,9 @@
 
        <%= form_for(@new_posts) do |f| %>
     <ul class="social">
-        <%= f.text_field :comment, :class => "form-row text-input-row" %>
+        <%= f.text_area :comment, :style => "width: 50%;display: block;margin: auto;" %>
 
-        <%= f.submit "Create", :class => "a.button", :style => "width:30%;display: block;margin: auto;" %>
+        <%= f.submit "Create", :class => "a.button", :style => "width:60px;display: block;margin: auto;" %>
       </ul>
     <% end %>
 

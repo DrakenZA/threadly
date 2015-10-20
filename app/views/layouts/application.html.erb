@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <title>threadly</title>
 <link rel="stylesheet" type="text/css" media="all" href="/assets/style.css" />
+<!---<script type="text/javascript" src="/assets/ddsmoothmenu.js"></script>--->
+
+
 
 <link rel="stylesheet" type="text/css" href="assets/media-queries.css" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,700,700italic|Open+Sans+Condensed:300,700' rel="stylesheet" type='text/css'>
@@ -26,33 +29,28 @@
 <div class="header-wrapper opacity">
 	<div class="header">
 		<!-- Begin Logo -->
-		<div class="logo">
-				<div class="intro"> threadly </div>
-			</a>
+		<div class="logo"><div class="intro", style="font-size: 30px"> threadly</div>
+				<div class="intro", style="font-size: 20px">
+					<% if current_user %>
+
+
+										<a href="#"><%=link_to current_user.username %></a>
+										<%= button_to "Log Out", logout_path, :method => :delete, :style => "width:100px;display: block;margin: auto;" %>
+										<%else%>
+										<%=link_to "Login", 'login' %>
+										<%=link_to "Sign Up", 'signup' %>
+										<%end%>
+
+
+
+				 </div>
+
 	    </div>
 		<!-- End Logo -->
 		<!-- Begin Menu -->
 		<div id="menu-wrapper">
 			<div id="menu" class="menu">
-				<ul id="tiny">
-<% if current_user %>
 
-
-					<li><%=link_to current_user.username %></li>
-					<li><%= button_to "Log Out", logout_path, :method => :delete %></li>
-					<%else%>
-					<li><%=link_to "Login", 'login' %></li>
-					<li><%=link_to "Sign Up", 'signup' %></li>
-					<%end%>
-
-
-
-
-
-
-
-
-				</ul>
 			</div>
 		</div>
 		<div class="clear"></div>
@@ -72,5 +70,6 @@
 
 <!-- End Footer -->
 <script type="text/javascript" src="/assets/scripts.js"></script>
+<script type="text/javascript" src="/assets/selectnav.js"></script>
 </body>
 </html>

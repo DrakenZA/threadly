@@ -1,6 +1,8 @@
+
+
 /*-----------------------------------------------------------------------------------*/
 /*	POSTS GRID
-/*-----------------------------------------------------------------------------------*/ 
+/*-----------------------------------------------------------------------------------*/
 $(window).load(function(){
     var $container = $('.blog-grid');
 
@@ -37,9 +39,9 @@ $(window).load(function(){
 
 jQuery(document).ready(function($) {
     		$('.video').fitVids();
-    	});	
+    	});
 
-    
+
 /*-----------------------------------------------------------------------------------*/
 /*	BUTTON HOVER
 /*-----------------------------------------------------------------------------------*/
@@ -49,15 +51,15 @@ $("a.button, .forms fieldset .btn-submit, #commentform input#submit").css("opaci
 $("a.button, .forms fieldset .btn-submit, #commentform input#submit").hover(function () {
 $(this).stop().animate({ opacity: 0.85 }, "fast");  },
 function () {
-$(this).stop().animate({ opacity: 1.0 }, "fast");  
-}); 
+$(this).stop().animate({ opacity: 1.0 }, "fast");
+});
 });
 
 /*-----------------------------------------------------------------------------------*/
 /*	IMAGE HOVER
-/*-----------------------------------------------------------------------------------*/		
-		
-jQuery(document).ready(function($) {	
+/*-----------------------------------------------------------------------------------*/
+
+jQuery(document).ready(function($) {
 $('.quick-flickr-item').addClass("frame");
 $('.frame a').prepend('<span class="more"></span>');
 });
@@ -70,7 +72,7 @@ jQuery(document).ready(function($) {
 
             $(this).children('a').children('span').fadeOut(200);
         });
-    });	
+    });
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -78,9 +80,9 @@ jQuery(document).ready(function($) {
 /*-----------------------------------------------------------------------------------*/
 
 getTwitters('twitter', {
-        id: 'elemisdesign', 
-        count: 2, 
-        enableLinks: true, 
+        id: 'elemisdesign',
+        count: 2,
+        enableLinks: true,
         ignoreReplies: false,
         template: '<span class="twitterPrefix"><span class="twitterStatus">%text%</span><br /><em class="twitterTime"><a href="http://twitter.com/%user_screen_name%/statuses/%id%">%time%</a></em>',
         newwindow: true
@@ -89,11 +91,11 @@ getTwitters('twitter', {
 /*-----------------------------------------------------------------------------------*/
 /*	FLICKR
 /*-----------------------------------------------------------------------------------*/
-	
+
 $(document).ready(function($){
 	$('.flickr-feed').dcFlickr({
-		limit: 9, 
-        q: { 
+		limit: 9,
+        q: {
             id: '51789731@N07',
 			lang: 'en-us',
 			format: 'json',
@@ -110,7 +112,7 @@ $(document).ready(function($){
         });
 		}
 	});
-});	
+});
 
 /*-----------------------------------------------------------------------------------*/
 /*	MENU
