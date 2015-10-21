@@ -14,7 +14,10 @@ if @user && @user.authenticate(params[:session][:password])
   session[:user_id] = @user.id
   redirect_to '/'
 else
-  redirect_to '/login'
+  flash.keep[:notice] = "Login Failed"
+
+  redirect_to login_path
+
 end
 end
 

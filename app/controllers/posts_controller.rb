@@ -1,12 +1,26 @@
 class PostsController < ApplicationController
 =begin before_action :require_user, only: [:index, :show]
 =end
+skip_before_filter :verify_authenticity_token
 
   def destroy
     @dpost = Post.find_by id: params[:id]
+    @dpostid = @dpost.id
     @dpost.destroy
-    redirect_to :action => 'index'
+
+
+
+    respond_to do |format|
+
+    format.js
+    format.html {redirect_to :action => 'index'}
   end
+
+
+
+  end
+
+
 
   def index
     @new_posts = Post.new
@@ -15,16 +29,14 @@ class PostsController < ApplicationController
 
 
     def create
-      @post = Post.new(params.require(:post).permit(:comment))
-      @post.owner = current_user.username
-    if @post.save
-      redirect_to '/posts'
-    else
-      render 'new'
+      @post = Post.new(params.require(:post).permit(:comment,:owner))
+      @post.save!
+      respond_to do |format|
+        format.js
+        format.html { redirect_to '/posts' }
+          # render posts/create.js.erb
+      end
     end
-
-
-  end
 
 
 

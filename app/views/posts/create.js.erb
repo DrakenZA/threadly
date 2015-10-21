@@ -1,0 +1,3 @@
+$("div.blog-grid").prepend("<%=j render 'postspart', :p => @post %>");
+$('.blog-grid').masonry('reloadItems');
+$('.blog-grid').masonry();

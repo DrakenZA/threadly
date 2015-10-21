@@ -26,14 +26,14 @@
 	<div class="header">
 		<!-- Begin Logo -->
 		<div class="logo"><div class="intro", style="font-size: 30px"> threadly</div>
-				<div class="intro", style="font-size: 20px">
+				<div class="intro", style="font-size: 20px;">
 					<% if current_user %>
 
 
 										<%=link_to current_user.username %>
 										<%= button_to "Log Out", logout_path, :method => :delete, :style => "width:100px;display: block;margin: auto;" %>
 										<%else%>
-										<%=link_to "Login", 'login' %>
+										<%=link_to "Login", login_path %>
 										<%=link_to "Sign Up", 'signup' %>
 										<%end%>
 
