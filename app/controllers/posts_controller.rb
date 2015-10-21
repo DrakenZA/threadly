@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-before_action :require_user, only: [:index, :show]
+=begin before_action :require_user, only: [:index, :show]
+=end
 
   def destroy
     @dpost = Post.find_by id: params[:id]

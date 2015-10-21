@@ -25,7 +25,7 @@
         <%=p.owner%>
         <%end%>
     </span>
-    <%if p.owner == current_user.username %>
+    <%if current_user != nil && p.owner == current_user.username || current_user != nil && current_user.admin? %>
     <%= button_to "delete" , post_path(:id => p.id), :method => :delete %>
     <%end%>
 

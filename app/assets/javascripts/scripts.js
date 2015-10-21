@@ -3,7 +3,7 @@
 /*-----------------------------------------------------------------------------------*/
 /*	POSTS GRID
 /*-----------------------------------------------------------------------------------*/
-$(window).load(function(){
+$(window).ready(function(){
     var $container = $('.blog-grid');
 
     var gutter = 30;
@@ -31,6 +31,12 @@ $(window).load(function(){
         });
         $container.css( 'visibility', 'visible' ).parent().removeClass( 'loading' );
     });
+    $('a.button').on( 'click', function() {
+      $('.post').prepend('test');
+      $( '.post' ).masonry( 'reloadItems' );
+      $( '.post' ).masonry( 'layout' );
+});
+
 });
 
 /*-----------------------------------------------------------------------------------*/
