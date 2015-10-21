@@ -1,4 +1,3 @@
-<%= javascript_include_tag "application" %>
 <%if current_user != nil %>
        <%= form_for(@new_posts, remote: true, html: {:'data-type' => 'script'}) do |f| %>
        <ul class="social">
