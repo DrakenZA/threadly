@@ -1,11 +1,12 @@
-
+<%if current_user != nil %>
        <%= form_for(@new_posts) do |f| %>
-    <ul class="social">
+       <ul class="social">
         <%= f.text_area :comment, :style => "width: 50%;display: block;margin: auto;" %>
 
         <%= f.submit "Create", :class => "a.button", :style => "width:60px;display: block;margin: auto;" %>
       </ul>
-    <% end %>
+      <% end %>
+<%end%>
 
 <div class="blog-wrap">
 	<!-- Begin Blog -->
