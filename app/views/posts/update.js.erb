@@ -1,0 +1,7 @@
+function lol () {
+  $(".blog-grid").html("<%= j render 'postspartlooped', :@all_posts => @all_posts %>");
+  $('.blog-grid').masonry('reloadItems');
+  $('.blog-grid').masonry();
+
+};
+lol();

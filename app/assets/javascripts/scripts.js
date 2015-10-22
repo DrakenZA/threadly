@@ -1,5 +1,4 @@
 
-
 /*-----------------------------------------------------------------------------------*/
 /*	POSTS GRID
 /*-----------------------------------------------------------------------------------*/
@@ -13,6 +12,7 @@ $(window).ready(function(){
             itemSelector : '.post',
             gutterWidth: gutter,
             isAnimated: true,
+            
               columnWidth: function( containerWidth ) {
                 var box_width = (((containerWidth - gutter)/2) | 0) ;
 

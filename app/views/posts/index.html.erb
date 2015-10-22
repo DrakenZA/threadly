@@ -1,7 +1,6 @@
-<%= javascript_include_tag "application" %>
 
 <%if current_user != nil %>
-       <%= form_for(@new_posts, remote: true, html: {:'data-type' => 'script'}) do |f| %>
+       <%= form_for(@new_posts, remote: true) do |f| %>
        <ul class="social">
         <%= f.text_area :comment, :style => "width: 50%;display: block;margin: auto;" %>
         <%=  f.text_field :owner, :style => "display: none", :readonly => true, :value => current_user.username %>
@@ -9,15 +8,36 @@
       </ul>
       <% end %>
 <%end%>
-<div id="removeme"></div>
+
+<%= button_to "Refresh", '/refresh', :remote => true, :method => :post, :style => "width:100px;display: block;margin: auto;" %>
+
+
+
 <div class="blog-wrap">
 	<!-- Begin Blog -->
 	<div class="blog-grid">
 
 <!-- Grab all Posts with partial, also pass var through -->
-<% @all_posts.each do |p| %>
-<%=render 'postspart', :p => p %>
-<%end%>
+
+<%=render 'postspartlooped', :@all_posts => @all_posts %>
+
 
 </div>
 </div>
+<!-- attempt at looop
+<script type="text/javascript">
+
+function lol () {
+  $(".blog-grid").html("<%= j render 'postspartlooped', :@all_posts => @all_posts %>");
+  $('.blog-grid').masonry('reloadItems');
+  $('.blog-grid').masonry();
+
+};
+
+$(document).ready(function(){
+  lol();
+setInterval(function () {lol()}, 3000);
+});
+
+</script>
+-->

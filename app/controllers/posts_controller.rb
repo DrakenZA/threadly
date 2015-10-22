@@ -4,6 +4,8 @@ class PostsController < ApplicationController
 skip_before_filter :verify_authenticity_token
 
   def destroy
+    @all_posts = Post.order(created_at: :desc).all
+
     @dpost = Post.find_by id: params[:id]
     @dpostid = @dpost.id
     @dpost.destroy
@@ -21,10 +23,10 @@ skip_before_filter :verify_authenticity_token
   end
 
 
-
-  def index
+    def index
     @new_posts = Post.new
     @all_posts = Post.order(created_at: :desc).all
+
   end
 
 
@@ -37,6 +39,17 @@ skip_before_filter :verify_authenticity_token
           # render posts/create.js.erb
       end
     end
+
+
+    def update
+      @all_posts = Post.order(created_at: :desc).all
+      respond_to do |format|
+        format.js
+        format.html { redirect_to '/posts' }
+          # render posts/create.js.erb
+      end
+    end
+
 
 
 

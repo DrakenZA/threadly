@@ -7,12 +7,12 @@ Rails.application.routes.draw do
 
   get 'posts/destroy'
 
-  get 'sigh/index'
 
   root "posts#index"
   post '/login' => 'sessions#create'
   get '/signup' => 'users#new'
   get '/login' => 'sessions#new'
+  post '/refresh' => 'posts#update'
 
 
   resources :users
